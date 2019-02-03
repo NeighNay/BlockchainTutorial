@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Blockchain Tutorial</string>
+    <string name="title_activity_knowledge_activity">knowledge_activity</string>
+    <string name="blockchain">Blockchain</string>
+    <string name="knowledge_test">Knowledge Test</string>
+    <string name="title_activity_blockchain_">blockchain_Activity</string>
 </resources>

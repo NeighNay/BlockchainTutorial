@@ -9,6 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".blockchain_activity"
+            android:label="@string/title_activity_blockchain_"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".knowledge_activity"
+            android:label="@string/title_activity_knowledge_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
