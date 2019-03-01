@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Button knowledgeActivity = (Button) findViewById(R.id.testButton);
+        Button knowledgeActivity = (Button) findViewById(R.id.quickFactButton);
         knowledgeActivity.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -37,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(MainActivity.this, background.class);
+                startActivity(intent);
+            }
+        });
+        Button quizActivity = (Button) findViewById(R.id.quizButton);
+        quizActivity.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, quizActivity.class);
                 startActivity(intent);
             }
         });

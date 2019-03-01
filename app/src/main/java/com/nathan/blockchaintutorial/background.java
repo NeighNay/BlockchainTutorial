@@ -21,7 +21,6 @@ public class background extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //code created by Ayaz Qureshi for channel InsideAndroid dated 19-oct-2017
 
 //create object of listview
         ListView listView=(ListView)findViewById(R.id.listview);
