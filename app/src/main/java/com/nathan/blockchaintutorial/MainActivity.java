@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         knowledgeActivity.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(MainActivity.this,knowledge_activity.class);
+                Intent intent = new Intent(MainActivity.this, knowledge.class);
                 startActivity(intent);
             }
         });
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         blockchainActivity.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(MainActivity.this, blockchain_activity.class);
+                Intent intent = new Intent(MainActivity.this, blockchain.class);
                 startActivity(intent);
             }
         });

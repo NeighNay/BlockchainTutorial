@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#51b46d "
     android:padding="50dp"
-    tools:context=".knowledge_activity">
+    tools:context=".knowledge">
 
     <TextView
         android:id="@+id/textView"

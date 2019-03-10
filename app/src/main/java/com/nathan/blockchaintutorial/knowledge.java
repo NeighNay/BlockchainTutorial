@@ -1,18 +1,15 @@
 package com.nathan.blockchaintutorial;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class knowledge_activity extends AppCompatActivity {
-    public static final String TAG = knowledge_activity.class.getSimpleName();
+public class knowledge extends AppCompatActivity {
+    public static final String TAG = knowledge.class.getSimpleName();
     private FactBook factBook = new FactBook();
     private ColorWheel colourWheel = new ColorWheel();
     // Declare our view variables
