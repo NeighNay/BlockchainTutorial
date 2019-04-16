@@ -39,7 +39,7 @@
         android:layout_alignLeft="@+id/factTextView"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/factTextView"
-        android:background="@android:color/white"
+        android:background="#474545"
         android:text="Show Another Blockchain Fact"
         android:textColor="#51b46d " />
 

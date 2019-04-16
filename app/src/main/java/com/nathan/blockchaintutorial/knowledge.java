@@ -7,14 +7,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 public class knowledge extends AppCompatActivity {
     public static final String TAG = knowledge.class.getSimpleName();
     private FactBook factBook = new FactBook();
-    private ColorWheel colourWheel = new ColorWheel();
+    private ColourWheel colourWheel = new ColourWheel();
     // Declare our view variables
     private TextView factTextView;
     private Button showFactButton;
+
     private RelativeLayout relativeLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,11 @@ public class knowledge extends AppCompatActivity {
         showFactButton.setOnClickListener(listener);
         //Toast.makeText(this, "Yay! Our Activity was created", Toast.LENGTH_SHORT).show();
         Log.d(TAG,"We're logging from the onCreate() method!");
+    }
+
+    public void nextFact(){
+
+
     }
     }
 

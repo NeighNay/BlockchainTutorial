@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".quiz">
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:layout_marginBottom="40dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,7 +25,7 @@
             android:text="0"
             android:textSize="20sp"/>
 
-    </RelativeLayout>
+
 
     <TextView
         android:layout_width="match_parent"
@@ -38,26 +33,29 @@
         android:text="Which thing is alive?"
         android:textSize="20sp"
         android:padding="8dp"
+        android:layout_below="@id/score"
         android:layout_marginBottom="40dp"
         android:id="@+id/question"/>
 
     <Button
+        android:id="@+id/choice1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="bird"
-        android:background="#0091EA"
-        android:textColor="#fff"
-        android:padding="8dp"
         android:layout_marginBottom="24dp"
-        android:id="@+id/choice1"/>
+        android:background="#474545"
+        android:padding="8dp"
+        android:layout_below="@id/question"
+        android:text="bird"
+        android:textColor="#fff" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="door"
-        android:background="#0091EA"
+        android:background="#474545"
         android:textColor="#fff"
         android:padding="8dp"
+        android:layout_below="@id/choice1"
         android:layout_marginBottom="24dp"
         android:id="@+id/choice2"/>
 
@@ -65,30 +63,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="rock"
-        android:background="#0091EA"
+        android:background="#474545"
         android:textColor="#fff"
         android:padding="8dp"
         android:layout_marginBottom="24dp"
+        android:layout_below="@id/choice2"
         android:id="@+id/choice3"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="mmm"
-        android:background="#A3A3A3"
+        android:background="#474545"
         android:textColor="#fff"
         android:padding="8dp"
+        android:layout_below="@id/choice3"
         android:layout_marginBottom="24dp"
         android:id="@+id/choice4"/>
 
     <Button
+        android:id="@+id/quit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="quit"
+        android:layout_alignBottom="@+id/choice4"
+        android:layout_marginBottom="0dp"
         android:background="#B71C1C"
-        android:textColor="#fff"
         android:padding="8dp"
-        android:layout_marginBottom="24dp"
-        android:id="@+id/quit"/>
+        android:layout_below="@id/choice4"
+        android:text="quit"
+        android:textColor="#fff" />
 
 
-</LinearLayout>
+</RelativeLayout>

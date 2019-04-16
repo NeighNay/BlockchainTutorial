@@ -8,9 +8,9 @@ import java.util.Random;
  * Created by nathc on 15/04/2018.
  */
 
-public class ColorWheel {
+public class ColourWheel {
     //Fields or Member Variables - Properties about the object
-    private final String[] colors ={
+    private final String[] colours ={
             "#39add1", // light blue
             "#3079ab", // dark blue
             "#c25975", // mauve
@@ -29,11 +29,11 @@ public class ColorWheel {
 
     // Methods - Actions the object can take
     int getColor(){
-        //Randomly select a fact
+        //Randomly select a colour
         Random randomGenerator = new Random();
-        int randomNumber = randomGenerator.nextInt(colors.length);
-        int color = Color.parseColor(colors[randomNumber]);
-        return color;
+        int randomNumber = randomGenerator.nextInt(colours.length);
+  
+        return Color.parseColor(colours[randomNumber]);
 
     }
 }

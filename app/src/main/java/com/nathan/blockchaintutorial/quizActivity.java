@@ -4,19 +4,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
-import org.w3c.dom.Text;
-
 public class quizActivity extends AppCompatActivity {
-
-
-
     private TextView scoreDisplay;
     private TextView question;
     private String answer;
@@ -24,7 +21,8 @@ public class quizActivity extends AppCompatActivity {
     private int score = 0;
     private int currentQuestion = 0;
     private Firebase thisQuestion, choice1,choice2,choice3,choice4, selectedAnswer;
-
+    private ColourWheel colourWheel = new ColourWheel();
+    private RelativeLayout relativeLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -37,7 +35,7 @@ public class quizActivity extends AppCompatActivity {
         button2 = (Button) findViewById(R.id.choice2);
         button3 = (Button) findViewById(R.id.choice3);
         button4 = (Button) findViewById(R.id.choice4);
-
+        relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
         nextQuestion();
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -47,10 +45,14 @@ public class quizActivity extends AppCompatActivity {
                     score+=1;
                     currentQuestion+=1;
                     scoreDisplay.setText(""+score);
+                    int color = colourWheel.getColor();
+                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
                 }
                 else{
                     currentQuestion+=1;
+                    int color = colourWheel.getColor();
+                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
                 }
             }
@@ -62,10 +64,15 @@ public class quizActivity extends AppCompatActivity {
                     score+=1;
                     currentQuestion+=1;
                     scoreDisplay.setText(""+score);
+                    int color = colourWheel.getColor();
+                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
+
                 }
                 else{
                     currentQuestion+=1;
+                    int color = colourWheel.getColor();
+                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
                 }
             }
@@ -77,10 +84,14 @@ public class quizActivity extends AppCompatActivity {
                     score+=1;
                     currentQuestion+=1;
                     scoreDisplay.setText(""+score);
+                    int color = colourWheel.getColor();
+                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
                 }
                 else{
                     currentQuestion+=1;
+                    int color = colourWheel.getColor();
+                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
                 }
             }
@@ -92,10 +103,14 @@ public class quizActivity extends AppCompatActivity {
                     score+=1;
                     currentQuestion+=1;
                     scoreDisplay.setText(""+score);
+                    int color = colourWheel.getColor();
+                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
                 }
                 else{
                     currentQuestion+=1;
+                    int color = colourWheel.getColor();
+                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
                 }
             }
@@ -103,12 +118,17 @@ public class quizActivity extends AppCompatActivity {
     }
 
     public void nextQuestion(){
-        thisQuestion = new Firebase("https://blockchain-quiz.firebaseio.com/"+currentQuestion+"/question");
+        thisQuestion = new Firebase("https://blockchain-quiz.firebaseio.com/quiz/"+currentQuestion+"/question");
         thisQuestion.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String getQuestion = dataSnapshot.getValue(String.class);
-                question.setText(getQuestion);
+                if(dataSnapshot.exists()){
+                    question.setText(getQuestion);
+                }
+                else{
+                    Toast.makeText(quizActivity.this,"You scored "+score,Toast.LENGTH_LONG).show();
+                }
 
             }
 
@@ -118,7 +138,7 @@ public class quizActivity extends AppCompatActivity {
             }
         });
 
-        choice1 = new Firebase("https://blockchain-quiz.firebaseio.com/"+currentQuestion+"/choice1");
+        choice1 = new Firebase("https://blockchain-quiz.firebaseio.com/quiz/"+currentQuestion+"/choice1");
         choice1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -132,7 +152,7 @@ public class quizActivity extends AppCompatActivity {
             }
         });
 
-        choice2 = new Firebase("https://blockchain-quiz.firebaseio.com/"+currentQuestion+"/choice2");
+        choice2 = new Firebase("https://blockchain-quiz.firebaseio.com/quiz/"+currentQuestion+"/choice2");
         choice2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -146,12 +166,12 @@ public class quizActivity extends AppCompatActivity {
             }
         });
 
-        choice3 = new Firebase("https://blockchain-quiz.firebaseio.com/"+currentQuestion+"/choice3");
+        choice3 = new Firebase("https://blockchain-quiz.firebaseio.com/quiz/"+currentQuestion+"/choice3");
         choice3.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String choice = dataSnapshot.getValue(String.class);
-                button3.setText(choice);
+                button3.setText("A type of cryptocurrency");
             }
 
             @Override
@@ -161,7 +181,7 @@ public class quizActivity extends AppCompatActivity {
         });
 
 
-        choice4 = new Firebase("https://blockchain-quiz.firebaseio.com/"+currentQuestion+"/choice4");
+        choice4 = new Firebase("https://blockchain-quiz.firebaseio.com/quiz/"+currentQuestion+"/choice4");
         choice4.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -175,7 +195,7 @@ public class quizActivity extends AppCompatActivity {
             }
         });
 
-        selectedAnswer = new Firebase("https://blockchain-quiz.firebaseio.com/"+currentQuestion+"/answer");
+        selectedAnswer = new Firebase("https://blockchain-quiz.firebaseio.com/quiz/"+currentQuestion+"/answer");
         selectedAnswer.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
