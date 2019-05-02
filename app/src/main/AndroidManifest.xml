@@ -28,6 +28,14 @@
             android:label="technicalDetails"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".background_3"
+            android:label="theFuture"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".background_4"
+            android:label="useCases"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".blockchain"
             android:label="@string/title_activity_blockchain_"
             android:theme="@style/AppTheme.NoActionBar" />

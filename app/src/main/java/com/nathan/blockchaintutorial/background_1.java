@@ -14,10 +14,7 @@ public class background_1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_background_1);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        Button btnvideo = (Button) findViewById(R.id.videoButton);
+Button btnvideo = (Button) findViewById(R.id.videoButton);
         btnvideo.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {

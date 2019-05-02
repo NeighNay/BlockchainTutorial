@@ -53,10 +53,12 @@ public class background extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case 3:
-                        Toast.makeText(background.this,"Coming Soon",Toast.LENGTH_SHORT).show();
+                        intent = new Intent(background.this, background_3.class);
+                        startActivity(intent);
                         break;
                     case 4:
-                        Toast.makeText(background.this,"Coming Soon",Toast.LENGTH_SHORT).show();
+                        intent = new Intent(background.this, background_4.class);
+                        startActivity(intent);
 
 
                 }
