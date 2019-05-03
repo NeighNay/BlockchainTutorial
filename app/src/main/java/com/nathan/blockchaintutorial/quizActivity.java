@@ -45,13 +45,13 @@ public class quizActivity extends AppCompatActivity {
                     currentQuestion+=1;
                     scoreDisplay.setText(""+score);
                     int color = colourWheel.getColor();
-                    relativeLayout.setBackgroundColor(color);
+
                     nextQuestion();
                 }
                 else{
                     currentQuestion+=1;
                     int color = colourWheel.getColor();
-                    relativeLayout.setBackgroundColor(color);
+
                     nextQuestion();
                 }
             }
@@ -64,14 +64,12 @@ public class quizActivity extends AppCompatActivity {
                     currentQuestion+=1;
                     scoreDisplay.setText(""+score);
                     int color = colourWheel.getColor();
-                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
 
                 }
                 else{
                     currentQuestion+=1;
                     int color = colourWheel.getColor();
-                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
                 }
             }
@@ -84,13 +82,11 @@ public class quizActivity extends AppCompatActivity {
                     currentQuestion+=1;
                     scoreDisplay.setText(""+score);
                     int color = colourWheel.getColor();
-                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
                 }
                 else{
                     currentQuestion+=1;
                     int color = colourWheel.getColor();
-                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
                 }
             }
@@ -103,13 +99,11 @@ public class quizActivity extends AppCompatActivity {
                     currentQuestion+=1;
                     scoreDisplay.setText(""+score);
                     int color = colourWheel.getColor();
-                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
                 }
                 else{
                     currentQuestion+=1;
                     int color = colourWheel.getColor();
-                    relativeLayout.setBackgroundColor(color);
                     nextQuestion();
                 }
             }
