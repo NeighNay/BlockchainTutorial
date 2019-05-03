@@ -7,15 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
+
+/**
+ * Created by nathc on 15/04/2018.
+ */
 public class knowledge extends AppCompatActivity {
     public static final String TAG = knowledge.class.getSimpleName();
     private FactBook factBook = new FactBook();
     private ColourWheel colourWheel = new ColourWheel();
-    // Declare our view variables
+    // Declare view variables
     private TextView factTextView;
     private Button showFactButton;
 
@@ -37,7 +37,6 @@ public class knowledge extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String fact = factBook.getFact();
-
 
                 //update the screen with our new fact
                 factTextView.setText(fact);

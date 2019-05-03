@@ -30,14 +30,13 @@ public class quizActivity extends AppCompatActivity {
 
         scoreDisplay = (TextView) findViewById(R.id.score);
         question = (TextView) findViewById(R.id.question);
-
         button1 = (Button) findViewById(R.id.choice1);
         button2 = (Button) findViewById(R.id.choice2);
         button3 = (Button) findViewById(R.id.choice3);
         button4 = (Button) findViewById(R.id.choice4);
         relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
         nextQuestion();
-
+        //set buttons to update when clicked, retrieve next text value and update score
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,17 +117,15 @@ public class quizActivity extends AppCompatActivity {
     }
 
     public void nextQuestion(){
+        if (currentQuestion < 8) {
+
+
         thisQuestion = new Firebase("https://blockchain-quiz.firebaseio.com/quiz/"+currentQuestion+"/question");
         thisQuestion.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String getQuestion = dataSnapshot.getValue(String.class);
-                if(dataSnapshot.exists()){
                     question.setText(getQuestion);
-                }
-                else{
-                    Toast.makeText(quizActivity.this,"You scored "+score,Toast.LENGTH_LONG).show();
-                }
 
             }
 
@@ -206,7 +203,9 @@ public class quizActivity extends AppCompatActivity {
             public void onCancelled(FirebaseError firebaseError) {
 
             }
+
         });
+        }
     }
         }
 
